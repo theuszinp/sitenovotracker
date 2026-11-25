@@ -1657,20 +1657,27 @@ footer h4 { color: var(--white); font-size: 0.86rem; margin-bottom: 18px; font-w
   font-size: 0.7rem;
   font-weight: 500;
 }
-.developer-credit { margin-top: 7px; }
-.developer-credit a {
-  color: var(--yellow-accent);
-  font-weight: 800;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+.developer-credit { margin-top: 14px; }
+.dev-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 7px 16px 7px 8px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 204, 0, 0.55);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.18);
+  color: var(--white); text-decoration: none; text-align: left;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
-.developer-credit a:hover,
-.developer-credit a:focus-visible {
-  color: var(--white);
-  text-decoration-color: currentColor;
+.dev-badge img { width: 40px; height: 40px; object-fit: contain; border-radius: 50%; background: #050b1a; padding: 5px; flex: none; }
+.dev-badge__txt { display: grid; line-height: 1.15; }
+.dev-badge__txt small { font-size: 0.66rem; font-weight: 500; opacity: 0.8; letter-spacing: 0.02em; }
+.dev-badge__txt strong { font-size: 0.95rem; font-weight: 800; color: var(--yellow-accent); }
+.dev-badge__seta { width: 16px; height: 16px; fill: none; stroke: var(--yellow-accent); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.25s ease; }
+.dev-badge:hover, .dev-badge:focus-visible {
+  background: var(--yellow-accent); color: var(--blue-dark); transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.2), var(--shadow-yellow);
 }
+.dev-badge:hover .dev-badge__txt strong, .dev-badge:focus-visible .dev-badge__txt strong { color: var(--blue-dark); }
+.dev-badge:hover .dev-badge__seta, .dev-badge:focus-visible .dev-badge__seta { stroke: var(--blue-dark); transform: translate(2px, -2px); }
 
 /* --- Floating buttons --- */
 .insurance-notice {
